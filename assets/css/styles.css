@@ -61,9 +61,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: var(--reading-width);
-    margin: 0 auto;
-    padding: var(--spacing-unit);
+    padding: 1.25rem 4rem; /* Adjusted padding to bring navigation in */
 }
 
 .site-footer {
@@ -116,22 +114,37 @@ a:focus-visible {
 /* === HEADER & NAVIGATION (TOP BAR) === */
 .masthead {
     text-align: left;
+    display: flex;
+    align-items: center;
+}
+.masthead .site-logo {
+    height: 121px; /* 120% bigger than 55px */
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+.masthead-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .masthead .site-title {
-    font-size: 1.25em;
+    font-size: 1.6em; /* Slightly increased for prominence */
     margin: 0;
     font-weight: 700;
+    line-height: 1.2;
 }
 .masthead .site-title a {
     text-decoration: none;
+    color: var(--heading-color);
 }
 
 .masthead .site-tagline {
     font-family: var(--font-serif);
-    font-size: 0.9em;
+    font-size: 1em; /* Adjusted for better hierarchy */
     margin: 0;
     color: var(--accent-color);
     display: block;
+    line-height: 1.2;
 }
 
 .site-nav {
@@ -142,7 +155,7 @@ a:focus-visible {
 .site-nav a {
     text-decoration: none;
     color: var(--accent-color);
-    margin-left: 1.5em;
+    margin-left: 3em; /* Increased spacing between navigation items */
     font-weight: 500;
 }
 
@@ -152,19 +165,51 @@ a:focus-visible {
 }
 
 /* === HOME PAGE === */
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: var(--text-color);
+    padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    overflow: hidden;
+}
+
+.hero-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+.hero-section h2, .hero-section p {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
 .hero-section h2 {
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: normal;
-    text-align: left;
+    text-align: center;
     margin-top: 0;
     margin-bottom: var(--spacing-unit);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-section p {
-    text-align: left;
-    font-size: 1.1em;
-    max-width: 65ch;
+    text-align: center;
+    font-size: 1.2em;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-title {
